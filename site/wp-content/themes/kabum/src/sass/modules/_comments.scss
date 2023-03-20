@@ -1,0 +1,526 @@
+/*======================================
+  Comments
+======================================*/
+#comments {
+  width: 100%;
+  padding-bottom: 105px;
+  margin-top: 65px;
+  border-top: 1px solid #D3D3D3;
+  .container {
+    max-width: 610px;
+  }
+  .title {
+    padding-top: 75px;
+    padding-bottom: 28px;
+    @include columns(
+			$quant: 1fr 85px,
+			$gutter: 10px, 
+			$align: center,
+			$template: 'title count'
+		);
+    .count {
+      text-align: right;
+    }
+    h4 {
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 150%;
+      color: rgba(18, 35, 51, 0.85);
+    }
+    .icon {
+		  width: 39px;
+      height: 42px;
+		  fill: transparent;
+		  stroke: currentColor;
+		  vertical-align: middle;
+		  display: inline-block;
+		  margin: 0 0px 0 0px;
+		}
+    span {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #D3D3D3;
+      vertical-align: middle;
+      border-radius: 50%;
+
+      font-family: $font-alt2;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 150%;
+      color: rgba(18, 35, 51, 0.85);
+      text-align: center;
+      padding: 8px 0 0 0;
+    }
+  }
+  .form {
+    padding: 0 0 0 0;
+    #reply-title {
+      display: none;
+    }
+  }
+  .form #commentform {
+    border-bottom: 1px solid #D3D3D3;
+    padding: 0 0 37px 0;
+    @include columns(
+			$quant: 1fr 1fr,
+			$gutter: 13px, 
+			$align: center,
+			$template: 'name email' 'comment comment' 'submit submit'
+		);
+    .comment-notes {
+      display: none;
+    }
+    .icon {
+		  width: 11px;
+      height: 18px;
+		  fill: transparent;
+		  stroke: currentColor;
+		  vertical-align: middle;
+		  display: inline-block;
+		  margin: 0 0px 0 0px;
+		}
+    .name {
+      grid-area: name;
+    }
+    .email {
+      grid-area: email;
+    }
+    .comment {
+      grid-area: comment;
+    }
+    .submit {
+      grid-area: submit;
+      position: relative;
+      .icon {
+        transform: rotate(180deg);
+        width: 8px;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    .fields {
+      position: relative;
+      &:before {
+        content: '\f2c0';
+        position: absolute;
+        font-family: $font-awesome;
+        font-size: 16px;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 48px;
+      }
+      &.name {
+        &:before {
+          content: '\f2c0';
+          padding: 16px 0 0 18px;
+        }
+      }
+      &.email {
+        &:before {
+          content: '\f003';
+          padding: 16px 0 0 18px;
+        }
+      }
+    }
+    input {
+      width: 100%;
+      height: 48px;
+      border: 1px solid #D3D3D3;
+      border-radius: 4px;
+      padding-left: 46px;
+      
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 100%;
+
+      &[type=submit] {
+        width: 126px;
+        height: auto;
+        padding-left: 0;
+        float: right;
+        background-color: transparent;
+
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 160%;
+        color: currentColor;
+        border-width: 0;
+        cursor: pointer;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 72px;
+      border: 1px solid #D3D3D3;
+      resize: none;
+      border-radius: 4px;
+      padding: 17px 27px;
+      font-family: $font-main;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 100%;
+    }
+  }
+  .commentList {
+    ul {
+      li {
+        border-bottom: 1px solid #D3D3D3;
+        padding-bottom: 32px;
+        padding-top: 35px;
+        h5 {
+          font-family: $font-main;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 150%;
+          display: inline-block;
+          vertical-align: middle;
+          color: #122333;
+        }
+        span {
+          font-family: $font-main;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          display: inline-block;
+          vertical-align: middle;
+          padding-left: 10px;
+          color: #122333;
+        }
+        p {
+          font-family: $font-alt2;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 160%;
+          padding-top: 14px;
+          color: #122333;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  #comments {
+    padding-bottom: get-vw-lg(105px);
+    margin-top: get-vw-lg(65px);
+    .container {
+      max-width: get-vw-lg(610px);
+    }
+    .title {
+      padding-top: get-vw-lg(75px);
+      padding-bottom: get-vw-lg(28px);
+      @include columns(
+        $quant: 1fr get-vw-lg(85px),
+        $gutter: get-vw-lg(10px), 
+        $align: center,
+        $template: 'title count'
+      );
+      h4 {
+        font-size: get-vw-lg(22px);
+      }
+      .icon {
+        width: get-vw-lg(39px);
+        height: get-vw-lg(42px);
+      }
+      span {
+        width: get-vw-lg(40px);
+        height: get-vw-lg(40px);
+        font-size: get-vw-lg(14px);
+        padding: get-vw-lg(8px) 0 0 0;
+      }
+    }
+    .form #commentform {
+      padding: 0 0 get-vw-lg(37px) 0;
+      @include columns(
+        $quant: 1fr 1fr,
+        $gutter: get-vw-lg(13px), 
+        $align: center,
+        $template: 'name email' 'comment comment' 'submit submit'
+      );
+      .icon {
+        width: get-vw-lg(11px);
+        height: get-vw-lg(18px);
+      }
+      .submit {
+        .icon {
+          width: get-vw-lg(8px);
+          height: get-vw-lg(25px);
+        }
+      }
+      .fields {
+        &:before {
+          width: get-vw-lg(36px);
+          height: get-vw-lg(48px);
+          font-size: get-vw-lg(16px);
+        }
+        &.name {
+          &:before {
+            padding: get-vw-lg(16px) 0 0 get-vw-lg(18px);
+          }
+        }
+        &.email {
+          &:before {
+            padding: get-vw-lg(16px) 0 0 get-vw-lg(18px);
+          }
+        }
+      }
+      input {
+        height: get-vw-lg(48px);
+        border-radius: get-vw-lg(4px);
+        padding-left: get-vw-lg(46px);
+        font-size: get-vw-lg(16px);
+  
+        &[type=submit] {
+          width: get-vw-lg(126px);
+          font-size: get-vw-lg(14px);
+        }
+      }
+      textarea {
+        height: get-vw-lg(72px);
+        border-radius: get-vw-lg(4px);
+        padding: get-vw-lg(17px) get-vw-lg(27px);
+        font-size: get-vw-lg(16px);
+      }
+    }
+    .commentList {
+      ul {
+        li {
+          padding-bottom: get-vw-lg(32px);
+          padding-top: get-vw-lg(35px);
+          h5 {
+            font-size: get-vw-lg(20px);
+          }
+          span {
+            font-size: get-vw-lg(16px);
+            padding-left: get-vw-lg(10px);
+          }
+          p {
+            font-size: get-vw-lg(16px);
+            padding-top: get-vw-lg(14px);
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint2($min:xs, $max:sm) {
+  #comments {
+    padding-bottom: get-vw-sm(105px);
+    margin-top: get-vw-sm(65px);
+    .container {
+      max-width: get-vw-sm(610px);
+    }
+    .title {
+      padding-top: get-vw-sm(75px);
+      padding-bottom: get-vw-sm(28px);
+      @include columns(
+        $quant: 1fr get-vw-sm(85px),
+        $gutter: get-vw-sm(10px), 
+        $align: center,
+        $template: 'title count'
+      );
+      h4 {
+        font-size: get-vw-sm(22px);
+      }
+      .icon {
+        width: get-vw-sm(39px);
+        height: get-vw-sm(42px);
+      }
+      span {
+        width: get-vw-sm(40px);
+        height: get-vw-sm(40px);
+        font-size: get-vw-sm(14px);
+        padding: get-vw-sm(8px) 0 0 0;
+      }
+    }
+    .form #commentform {
+      padding: 0 0 get-vw-sm(37px) 0;
+      @include columns(
+        $quant: 1fr 1fr,
+        $gutter: get-vw-sm(13px), 
+        $align: center,
+        $template: 'name email' 'comment comment' 'submit submit'
+      );
+      .icon {
+        width: get-vw-sm(11px);
+        height: get-vw-sm(18px);
+      }
+      .submit {
+        .icon {
+          width: get-vw-sm(8px);
+          height: get-vw-sm(25px);
+        }
+      }
+      .fields {
+        &:before {
+          width: get-vw-sm(36px);
+          height: get-vw-sm(48px);
+          font-size: get-vw-sm(16px);
+        }
+        &.name {
+          &:before {
+            padding: get-vw-sm(16px) 0 0 get-vw-sm(18px);
+          }
+        }
+        &.email {
+          &:before {
+            padding: get-vw-sm(16px) 0 0 get-vw-sm(18px);
+          }
+        }
+      }
+      input {
+        height: get-vw-sm(48px);
+        border-radius: get-vw-sm(4px);
+        padding-left: get-vw-sm(46px);
+        font-size: get-vw-sm(16px);
+  
+        &[type=submit] {
+          width: get-vw-sm(126px);
+          font-size: get-vw-sm(14px);
+        }
+      }
+      textarea {
+        height: get-vw-sm(72px);
+        border-radius: get-vw-sm(4px);
+        padding: get-vw-sm(17px) get-vw-sm(27px);
+        font-size: get-vw-sm(16px);
+      }
+    }
+    .commentList {
+      ul {
+        li {
+          padding-bottom: get-vw-sm(32px);
+          padding-top: get-vw-sm(35px);
+          h5 {
+            font-size: get-vw-sm(20px);
+          }
+          span {
+            font-size: get-vw-sm(16px);
+            padding-left: get-vw-sm(10px);
+          }
+          p {
+            font-size: get-vw-sm(16px);
+            padding-top: get-vw-sm(14px);
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint2($min:'', $max:xs) {
+  #comments {
+    padding-bottom: get-vw-xs(105px);
+    margin-top: get-vw-xs(65px);
+    .container {
+      max-width: get-vw-xs(610px);
+    }
+    .title {
+      padding-top: get-vw-xs(75px);
+      padding-bottom: get-vw-xs(28px);
+      @include columns(
+        $quant: 1fr get-vw-xs(85px),
+        $gutter: get-vw-xs(10px), 
+        $align: center,
+        $template: 'title count'
+      );
+      h4 {
+        font-size: get-vw-xs(22px);
+      }
+      .icon {
+        width: get-vw-xs(39px);
+        height: get-vw-xs(42px);
+      }
+      span {
+        width: get-vw-xs(40px);
+        height: get-vw-xs(40px);
+        font-size: get-vw-xs(14px);
+        padding: get-vw-xs(8px) 0 0 0;
+      }
+    }
+    .form #commentform {
+      padding: 0 0 get-vw-xs(37px) 0;
+      @include columns(
+        $quant: 1fr 1fr,
+        $gutter: get-vw-xs(13px), 
+        $align: center,
+        $template: 'name email' 'comment comment' 'submit submit'
+      );
+      .icon {
+        width: get-vw-xs(11px);
+        height: get-vw-xs(18px);
+      }
+      .submit {
+        .icon {
+          width: get-vw-xs(8px);
+          height: get-vw-xs(25px);
+        }
+      }
+      .fields {
+        &:before {
+          width: get-vw-xs(36px);
+          height: get-vw-xs(48px);
+          font-size: get-vw-xs(16px);
+        }
+        &.name {
+          &:before {
+            padding: get-vw-xs(16px) 0 0 get-vw-xs(18px);
+          }
+        }
+        &.email {
+          &:before {
+            padding: get-vw-xs(16px) 0 0 get-vw-xs(18px);
+          }
+        }
+      }
+      input {
+        height: get-vw-xs(48px);
+        border-radius: get-vw-xs(4px);
+        padding-left: get-vw-xs(46px);
+        font-size: get-vw-xs(16px);
+  
+        &[type=submit] {
+          width: get-vw-xs(126px);
+          font-size: get-vw-xs(14px);
+        }
+      }
+      textarea {
+        height: get-vw-xs(72px);
+        border-radius: get-vw-xs(4px);
+        padding: get-vw-xs(17px) get-vw-xs(27px);
+        font-size: get-vw-xs(16px);
+      }
+    }
+    .commentList {
+      ul {
+        li {
+          padding-bottom: get-vw-xs(32px);
+          padding-top: get-vw-xs(35px);
+          h5 {
+            font-size: get-vw-xs(20px);
+          }
+          span {
+            font-size: get-vw-xs(16px);
+            padding-left: get-vw-xs(10px);
+          }
+          p {
+            font-size: get-vw-xs(16px);
+            padding-top: get-vw-xs(14px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,179 @@
+/*======================================
+  Last News
+======================================*/
+
+.home #lastNews {
+  border-bottom: 1px solid #DBDBDB;
+}
+
+#lastNews {
+  overflow: hidden;
+  padding: 62px 0 133px 0;
+  h3 {
+    font-family: $font-main;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 110%;
+    padding: 0px 0 39px 0;
+    margin: 0 0 0 -4px;
+    .icon {
+      width: 30px;
+      height: 29px;
+      fill: $color-orange;
+      stroke: transparent;
+      vertical-align: middle;
+      display: inline-block;
+      margin: 0 13px 0 0;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      color: #122333;
+    }
+  }
+  #theFour {
+    height: 215px;
+    @include columns( $quant: 1fr 1fr 1fr 1fr, $gutter: 25px, $align: top, $template: '');
+  }
+  #news,
+  .classnews {
+    padding: 63px 0 0 0;
+    @include columns( $quant: 1fr 1fr 1fr, $gutter: 37px, $align: start, $template: '');
+  }
+  &.postCont {
+    padding: 101px 0 0 0;
+    border-bottom: 0px solid #DBDBDB;
+    .container {
+      padding-top: 72px;
+      padding-bottom: 116px;
+      border-top: 1px solid #DBDBDB;
+      border-bottom: 1px solid #DBDBDB;
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  #lastNews {
+    padding: get-vw-lg(62px) 0 get-vw-lg(133px) 0;
+    h3 {
+      font-size: get-vw-lg(32px);
+      padding: 0px 0 get-vw-lg(39px) 0;
+      margin: 0 0 0 get-vw-lg(-4px);
+      .icon {
+        width: get-vw-lg(30px);
+        height: get-vw-lg(29px);
+        margin: 0 get-vw-lg(13px) 0 0;
+      }
+    }
+    #theFour {
+      height: get-vw-lg(215px);
+      @include columns( $quant: 1fr 1fr 1fr 1fr, $gutter: get-vw-lg(25px), $align: top, $template: '');
+    }
+    #news,
+    .classnews {
+      padding: get-vw-lg(63px) 0 0 0;
+      @include columns( $quant: 1fr 1fr 1fr, $gutter: get-vw-lg(37px), $align: start, $template: '');
+    }
+    &.postCont {
+      padding: get-vw-lg(101px) 0 0 0;
+      .container {
+        padding-top: get-vw-lg(72px);
+        padding-bottom: get-vw-lg(116px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  #lastNews {
+    padding: get-vw-sm(62px) 0 get-vw-sm(80px) 0;
+    h3 {
+      font-size: get-vw-sm(32px);
+      padding: 0px 0 get-vw-sm(39px) 0;
+      margin: 0 0 0 get-vw-sm(-4px);
+      text-align: center;
+      .icon {
+        width: get-vw-sm(30px);
+        height: get-vw-sm(29px);
+        margin: 0 get-vw-sm(13px) 0 0;
+      }
+    }
+    #theFour {
+      height: auto;
+      border-bottom: 1px solid #DBDBDB;
+      padding-bottom: get-vw-xs(39px);
+      @include columns( $quant: 1fr 1fr, $gutter: get-vw-sm(25px), $align: top, $template: '');
+      .featured {
+        .img {
+          height: get-vw-sm(250px);
+        }
+        .content {
+          position: relative;
+          padding: get-vw-xs(10px) 0 get-vw-xs(19px) 0;
+          h2 {
+            color: #122333;
+          }
+        }
+      }
+    }
+    #news,
+    .classnews {
+      padding: get-vw-sm(63px) 0 0 0;
+      @include columns( $quant: 1fr, $gutter: get-vw-sm(37px), $align: start, $template: '');
+    }
+    &.postCont {
+      padding: get-vw-sm(101px) 0 0 0;
+      .container {
+        padding-top: get-vw-sm(72px);
+        padding-bottom: get-vw-sm(116px);
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  #lastNews {
+    padding: get-vw-xs(62px) 0 get-vw-xs(80px) 0;
+    h3 {
+      font-size: get-vw-xs(32px);
+      padding: 0px 0 get-vw-xs(39px) 0;
+      margin: 0 0 0 get-vw-xs(-4px);
+      text-align: center;
+      .icon {
+        width: get-vw-xs(30px);
+        height: get-vw-xs(29px);
+        margin: 0 get-vw-xs(13px) 0 0;
+      }
+    }
+    #theFour {
+      height: auto;
+      border-bottom: 1px solid #DBDBDB;
+      padding-bottom: get-vw-xs(39px);
+      @include columns( $quant: 1fr 1fr, $gutter: get-vw-xs(25px), $align: top, $template: '');
+      .featured {
+        .img {
+          height: get-vw-sm(250px);
+        }
+        .content {
+          position: relative;
+          padding: get-vw-xs(10px) 0 get-vw-xs(19px) 0;
+          h2 {
+            color: #122333;
+          }
+        }
+      }
+    }
+    #news,
+    .classnews {
+      padding: get-vw-xs(63px) 0 0 0;
+      @include columns( $quant: 1fr, $gutter: get-vw-xs(37px), $align: start, $template: '');
+    }
+    &.postCont {
+      padding: get-vw-xs(101px) 0 0 0;
+      .container {
+        padding-top: get-vw-xs(72px);
+        padding-bottom: get-vw-xs(116px);
+      }
+    }
+  }
+}

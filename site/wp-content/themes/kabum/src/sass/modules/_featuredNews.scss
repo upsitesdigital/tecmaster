@@ -1,0 +1,195 @@
+/*======================================
+  Featured News
+======================================*/
+
+#featuredNews {
+  border-bottom: 1px solid #DBDBDB;
+  overflow: hidden;
+  .grid {
+    @include columns( $quant: 68.5% 31.5%, $gutter: 10px, $align: center, $template: 'blockNews blockBanner');
+  }
+  .blockNews {
+    grid-area: blockNews;
+    border-right: 1px solid #DBDBDB;
+    padding-right: 2%;
+    padding-bottom: 158px;
+    height: 100%;
+    h3 {
+      font-family: $font-main;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 110%;
+      padding: 67px 0 43px 0;
+      margin: 0 0 0 -4px;
+      .icon {
+        width: 29px;
+        height: 36px;
+        fill: $color-orange;
+        stroke: $color-orange;
+        vertical-align: middle;
+        display: inline-block;
+        margin: 0 13px 0 0;
+      }
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        color: #122333;
+      }
+    }
+  }
+  .blockBanner {
+    grid-area: blockBanner;
+    height: 100%;
+    text-align: right;
+    .banner {
+      width: 100%;
+      max-width: 319px;
+      margin: 69px 0;
+      display: inline-block;
+      border-radius: 5px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .primary {
+        display: block;
+      }
+      .secondary {
+        display: none;
+      }
+    }
+  }
+  #news,
+  .classnews {
+    @include columns( $quant: 1fr 1fr, $gutter: 37px, $align: start, $template: '');
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  #featuredNews {
+    .grid {
+      @include columns( $quant: 68.5% 31.5%, $gutter: get-vw-lg(10px), $align: center, $template: 'blockNews blockBanner');
+    }
+    .blockNews {
+      padding-bottom: get-vw-lg(158px);
+      h3 {
+        font-size: get-vw-lg(32px);
+        padding: get-vw-lg(67px) 0 get-vw-lg(43px) 0;
+        margin: 0 0 0 get-vw-lg(-4px);
+        .icon {
+          width: get-vw-lg(29px);
+          height: get-vw-lg(36px);
+          margin: 0 get-vw-lg(13px) 0 0;
+        }
+      }
+    }
+    .blockBanner {
+      .banner {
+        max-width: get-vw-lg(319px);
+        height: get-vw-lg(612px);
+        margin: get-vw-lg(69px) 0;
+      }
+    }
+    #news,
+    .classnews {
+      @include columns( $quant: 1fr 1fr, $gutter: get-vw-lg(37px), $align: start, $template: '');
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  #featuredNews {
+    .grid {
+      @include columns( $quant: 100%, $gutter: get-vw-sm(10px), $align: center, $template: 'blockBanner' 'blockNews');
+    }
+    .blockNews {
+      position: relative;
+      border-right: 0px solid #DBDBDB;
+      padding-bottom: get-vw-sm(80px);
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -25%;
+        width: 150%;
+        border-top: 1px solid #DBDBDB;
+      }
+      h3 {
+        font-size: get-vw-sm(32px);
+        padding: get-vw-sm(67px) 0 get-vw-sm(43px) 0;
+        margin: 0 0 0 get-vw-sm(-4px);
+        text-align: center;
+        .icon {
+          width: get-vw-sm(29px);
+          height: get-vw-sm(36px);
+          margin: 0 get-vw-sm(13px) 0 0;
+        }
+      }
+    }
+    .blockBanner {
+      .banner {
+        max-width: 100%;
+        margin: get-vw-sm(32px) 0 get-vw-sm(22px) 0;
+        .primary {
+          display: none;
+        }
+        .secondary {
+          display: block;
+        }
+      }
+    }
+    #news,
+    .classnews {
+      @include columns( $quant: 1fr, $gutter: get-vw-sm(37px), $align: start, $template: '');
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  #featuredNews {
+    .grid {
+      @include columns( $quant: 100%, $gutter: get-vw-xs(10px), $align: center, $template: 'blockBanner' 'blockNews');
+    }
+    .blockNews {
+      position: relative;
+      border-right: 0px solid #DBDBDB;
+      padding-bottom: get-vw-xs(80px);
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -25%;
+        width: 150%;
+        border-top: 1px solid #DBDBDB;
+      }
+      h3 {
+        font-size: get-vw-xs(32px);
+        padding: get-vw-xs(67px) 0 get-vw-xs(43px) 0;
+        margin: 0 0 0 get-vw-xs(-4px);
+        text-align: center;
+        .icon {
+          width: get-vw-xs(29px);
+          height: get-vw-xs(36px);
+          margin: 0 get-vw-xs(13px) 0 0;
+        }
+      }
+    }
+    .blockBanner {
+      .banner {
+        max-width: 100%;
+        margin: get-vw-xs(32px) 0 get-vw-xs(22px) 0;
+        .primary {
+          display: none;
+        }
+        .secondary {
+          display: block;
+        }
+      }
+    }
+    #news,
+    .classnews {
+      @include columns( $quant: 1fr, $gutter: get-vw-xs(37px), $align: start, $template: '');
+    }
+  }
+}

@@ -1,0 +1,42 @@
+/*======================================
+  Buttons
+======================================*/
+.btn {
+  @include animate($time:0.3s);
+	@include inline-block($align:middle);
+	font-size: 20px;
+	background-color: $color-orange;
+	color: $color-white;
+	display: inline-block;
+	padding: 15px 40px;
+	border: 1px solid $color-orange;
+	border-radius: 5px;
+	&:hover {
+		background-color: $color-white;
+		color: $color-orange;
+	}
+}
+
+@include breakpoint2($min:xl, $max:'') {}
+@include breakpoint2($min:lg, $max:xl) {}
+@include breakpoint2($min:sm, $max:lg) {
+	.btn {
+		font-size: get-vw-lg(20px);
+		padding: get-vw-lg(15px) get-vw-lg(40px);
+		border-radius: get-vw-lg(5px);
+	}
+}
+@include breakpoint2($min:xs, $max:sm) {
+	.btn {
+		font-size: get-vw-sm(20px);
+		padding: get-vw-sm(15px) get-vw-sm(40px);
+		border-radius: get-vw-sm(5px);
+	}
+}
+@include breakpoint2($min:'', $max:xs) {
+	.btn {
+		font-size: get-vw-xs(20px);
+		padding: get-vw-xs(15px) get-vw-xs(40px);
+		border-radius: get-vw-xs(5px);
+	}
+}

@@ -1,0 +1,204 @@
+/*======================================
+  Paginations
+======================================*/
+/*.pag {
+  border: 1px solid #8D98A9;
+  width: 310px;
+  height: 42px;
+  margin: 118px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+  .icon {
+    width: 7px;
+    height: 13px;
+    fill: transparent;
+    stroke: currentColor;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0px 0 0;
+  }
+  a {
+    display: flex;
+    vertical-align: top;
+    font-size: 12px;
+    color: #8D98A9;
+    height: 100%;
+    align-items: center;
+    padding: 0 10px;
+    &.current {
+      color: currentColor;
+    }
+    &:hover {
+      color: currentColor;
+    }
+  }
+  .prev {
+    width: 58px;
+    height: 100%;
+    border-right: 1px solid #8D98A9;
+    justify-content: center;
+    align-items: center;
+    color: currentColor;
+    padding: 0;
+    &:hover {
+      background-color: currentColor !important;
+      .icon {
+        stroke: #FFF !important;
+      }
+    }
+  }
+  .next {
+    width: 58px;
+    height: 100%;
+    border-left: 1px solid #8D98A9;
+    justify-content: center;
+    align-items: center;
+    color: currentColor;
+    margin-right: -1px;
+    padding: 0;
+    .icon {
+      transform: rotate(180deg);
+    }
+    &:hover {
+      background-color: currentColor !important;
+      .icon {
+        stroke: #FFF !important;
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  .pag {
+    width: get-vw-lg(310px);
+    height: get-vw-lg(42px);
+    margin: get-vw-lg(118px) auto 0 auto;
+    border-radius: get-vw-lg(4px);
+    .icon {
+      width: get-vw-lg(7px);
+      height: get-vw-lg(13px);
+    }
+    a {
+      font-size: get-vw-lg(12px);
+    }
+    .prev {
+      width: get-vw-lg(58px);
+    }
+    .next {
+      width: get-vw-lg(58px);
+    }
+  }
+}
+@include breakpoint2($min:xs, $max:sm) {
+  .pag {
+    width: get-vw-sm(310px);
+    height: get-vw-sm(42px);
+    margin: get-vw-sm(80px) auto 0 auto;
+    border-radius: get-vw-sm(4px);
+    .icon {
+      width: get-vw-sm(7px);
+      height: get-vw-sm(13px);
+    }
+    a {
+      font-size: get-vw-sm(12px);
+    }
+    .prev {
+      width: get-vw-sm(58px);
+    }
+    .next {
+      width: get-vw-sm(58px);
+    }
+  }
+}
+@include breakpoint2($min:'', $max:xs) {
+  .pag {
+    width: get-vw-xs(310px);
+    height: get-vw-xs(42px);
+    margin: get-vw-sm(80px) auto 0 auto;
+    border-radius: get-vw-xs(4px);
+    .icon {
+      width: get-vw-xs(7px);
+      height: get-vw-xs(13px);
+    }
+    a {
+      font-size: get-vw-xs(12px);
+    }
+    .prev {
+      width: get-vw-xs(58px);
+    }
+    .next {
+      width: get-vw-xs(58px);
+    }
+  }
+}*/
+
+.pag {
+  padding: 50px 0 0 0;
+  width: 100%;
+  text-align: center;
+  .icon {
+    width: 7px;
+    height: 13px;
+    fill: transparent;
+    stroke: currentColor;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0px 0 0;
+  }
+  a {
+    background-color: currentColor;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    opacity: 0.3;
+    margin: 0 6px;
+    &.current {
+      opacity: 1;
+    }
+  }
+  .prev {
+    background-color: currentColor;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 10px;
+    opacity: 1;
+    .icon {
+      height: 31px;
+      color: #FFF;
+    }
+  }
+  .next {
+    background-color: currentColor;
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin-left: 10px;
+    opacity: 1;
+    .icon {
+      height: 31px;
+      color: #FFF;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+
+
+
+
+
+
+

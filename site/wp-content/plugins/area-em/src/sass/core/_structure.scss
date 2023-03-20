@@ -1,0 +1,310 @@
+/*======================================
+  Main structure
+======================================*/
+//body{background: url(../img/bg.jpg) top center no-repeat;}
+
+
+
+.customContainer {
+	max-width: 1254px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.customContent {
+	@include columns(
+		$quant: 280px 1fr,
+		$gutter: 30px, 
+		$align: start,
+		$template: 'sidebar content'
+	);
+	.contentSidebar {
+		grid-area: sidebar;
+		ul {
+			li {
+				padding: 0 0 0 15px;
+				margin: 0 0 16px 0;
+				position: relative;
+				a {
+					font-family: $font-alt;
+					font-style: normal;
+					font-weight: normal;
+					font-size: 18px;
+					line-height: 150%;
+					color: #626262;
+					padding-left: 23px;
+				}
+				&::before {
+					content: '';
+					width: 22px;
+					height: 22px;
+					position: absolute;
+					top: 0;
+					left: -3px;
+					background: url(../img/sidebar.png) center center no-repeat;
+					background-size: contain;
+				}
+				&>ul {
+					li {
+						padding: 0 0 0 15px;
+						margin: 3px 0;
+						a {
+							padding-left: 9px;
+						}
+						&::before {
+							content: '';
+							width: 16px;
+							height: 16px;
+							position: absolute;
+							top: 4px;
+							left: -0px;
+							background: url(../img/sidebar.png) center center no-repeat;
+							background-size: contain;
+						}
+					}
+				}
+				&.act {
+					&::before {
+						background: url(../img/sidebar-hover.png) center center no-repeat;
+						background-size: contain;
+					}
+					a {
+						font-weight: 600;
+						color: #1B263B;
+					}
+				}
+			}
+		}
+	}
+	.contentBody {
+		grid-area: content;
+		h2 {
+			font-style: normal;
+			font-weight: 600;
+			font-size: 24px;
+			line-height: 100%;
+			color: #1B263B;
+			padding: 0 0 28px 0;
+		}
+		h3 {
+			font-style: normal;
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 100%;
+			color: #1B263B;
+			padding: 0 0 28px 0;
+		}
+		p {
+			font-family: $font-alt;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 150%;
+			color: #545454;
+			letter-spacing: 0.01em;
+			padding: 0 0 27px 0;
+		}
+		ul {
+			li {
+				border-bottom: 1px solid #CDCDCD;
+				margin: 0 0 25px 0;
+				h3 {
+					font-family: $font-alt;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 18px;
+					line-height: 150%;
+					color: #00B0F0;
+				}
+				p {
+					font-size: 16px;
+					padding: 0 0 22px 0;
+				}
+			}
+		}
+		.boxForm {
+			padding: 8px 0 0 0;
+			max-width: 384px;
+			.support {
+				font-family: $font-main;
+				font-style: normal;
+				font-weight: 300;
+				font-size: 12px;
+				line-height: 145%;
+				letter-spacing: 0.01em;
+				color: #000000;
+				padding: 8px 0 67px 0;
+			}
+			.submit {
+				margin: 0;
+			}
+		}
+	}
+}
+@include breakpoint2($min:'', $max:sm) {
+	.customContent {
+		@include columns(
+			$quant: 1fr,
+			$gutter: 30px, 
+			$align: start,
+			$template: 'sidebar' 'content'
+		);
+		.contentSidebar {
+			border-bottom: 1px solid rgba(170, 173, 178, 0.2);
+			padding: 0 0 20px 0;
+			margin: 0 0 20px 0;
+		}
+	}
+}
+
+#boxLogin {
+	max-width: 424px;
+	padding: 0 20px;
+	margin: 111px auto;
+	h2 {
+		font-family: $font-alt;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 32px;
+		line-height: 120%;
+		color: #1B263B;
+		letter-spacing: 0.01em;
+		padding: 0 0 31px 52px;
+		position: relative;
+		&:before {
+			content: '';
+			width: 35px;
+			height: 35px;
+			display: inline-block;
+			background: url(../img/profile.png) center center no-repeat;
+			background-size: contain;
+			position: absolute;
+    	left: 0;
+		}
+	}
+}
+
+.boxForm {
+	.boxField,.login-username,.login-password {
+		padding: 0 0 16px 0;
+	}
+	label {
+		font-family: $font-main;
+		font-style: normal;
+		font-weight: 300;
+		font-size: $font-size;
+		line-height: 140%;
+		letter-spacing: 0.01em;
+		color: $color-black;
+		display: block;
+		padding: 0 0 4px 0;
+	}
+	input {
+		width: 100%;
+		height: 48px;
+		padding: 0 20px;
+		border: 1px solid #D9D9D9;
+		box-sizing: border-box;
+		border-radius: 4px;
+
+		font-family: $font-main;
+		font-style: normal;
+		font-weight: 300;
+		font-size: $font-size;
+		line-height: 140%;
+		letter-spacing: 0.01em;
+		color: $color-black;
+	}
+	.submit,input[type="submit"] {
+		background-color: #00B0F0;
+		border: 1px solid #00B0F0;
+		color: #FFF;
+		margin: 16px 0 31px 0;
+		@include animate($time:0.3s);
+		&:hover {
+			background-color: transparent;
+			color: #00B0F0;
+		}
+	}
+	.lostPassword {
+		font-family: $font-main;
+		font-style: normal;
+		font-weight: 300;
+		font-size: $font-size;
+		line-height: 140%;
+		letter-spacing: 0.01em;
+		color: $color-black;
+		padding: 0 0 0 31px;
+		position: relative;
+		&:before {
+			@include animate($time:0.1s);
+			content: '';
+			width: 17px;
+			height: 19px;
+			display: inline-block;
+			background: url(../img/lostPassword.png) center center no-repeat;
+			background-size: contain;
+			position: absolute;
+    	left: 0;
+			top: 2px;
+		}
+		&:hover {
+			text-decoration: underline;
+			&:before {
+				left: 2px;
+			}
+		}
+	}
+}
+
+#boxSalutation {
+	padding: 55px 0 0 0;
+	.customContainer {
+		position: relative;
+	}
+	h2 {
+		font-family: $font-alt;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 120%;
+		color: #1B263B;
+		letter-spacing: 0.01em;
+		padding: 0px 0 22px 44px;
+		position: relative;
+		border-bottom: 1px solid rgba(170, 173, 178, 0.2);
+		&:before {
+			content: '';
+			width: 30px;
+			height: 30px;
+			display: inline-block;
+			background: url(../img/profile.png) center center no-repeat;
+			background-size: contain;
+			position: absolute;
+    	left: -3px;
+			top: -1px;
+		}
+	}
+	.exit {
+		font-family: $font-alt;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 120%;
+		color: #1B263B;
+		position: absolute;
+		top: -5px;
+    right: 5px;
+	}
+}
+@include breakpoint2($min:'', $max:sm) {
+	#boxSalutation {
+		.exit {
+			top: -30px;
+			right: 20px;
+		}
+	}
+}
+
+#boxContent {
+	padding: 87px 0 187px 0;
+}
